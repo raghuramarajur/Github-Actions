@@ -1,0 +1,10 @@
+name: GH-200 Cohack
+
+on: push
+
+jobs:
+  hello-world:
+    runs-on: ubuntu-latest
+    steps:
+      - name: Say Hello
+        run: echo "Hello! From GH-200 session"
