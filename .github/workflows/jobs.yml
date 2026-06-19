@@ -26,5 +26,5 @@ jobs:
           echo "Secret is configured: ${{ secrets.MY_API_KEY != '' }}"
           echo "Using secret safely in script (masked in logs)"
           echo "MY_SECRET value is - " $MY_SECRET
-          DISPLAY_VALUE = $MY_SECRET
+          DISPLAY_VALUE=$MY_SECRET
           echo "The display value is - " $DISPLAY_VALUE
