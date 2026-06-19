@@ -1,0 +1,27 @@
+name: Cohack Journey
+
+on: push
+
+env:
+  WORKSHOP_NAME: "GH-200 CoHack"
+  TRAINER: "Raghu rama raju R."
+jobs:
+  setup:
+    runs-on: ubuntu-latest
+    env:
+      JOB_ENV: "Setup Phase"
+    steps:
+      - name: Show Variables
+        env:
+          STEP_VAR: "Step-level value"
+        run: |
+          echo "WorkShop: $WORKSHOP_NAME"
+          echo "JOB_ENV: $JOB_ENV"
+          echo "STEP_ENV: $STEP_VAR"
+
+      - name: Use repository secret
+        env:
+          MY_SECRET: ${{ secrets.MY_API_KEY }}
+        run: |
+          echo "Secret is configured: ${{ secrets.MY_API_KEY != '' }}"
+          echo "Using secret safely in script (masked in logs)"
